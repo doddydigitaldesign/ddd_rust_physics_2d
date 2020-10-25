@@ -1,5 +1,6 @@
-pub mod shapes;
 pub mod dynamics;
+pub mod shapes;
+pub mod utils;
 
 #[cfg(test)]
 mod tests {
@@ -8,5 +9,3 @@ mod tests {
         assert_eq!(2 + 2, 4);
     }
 }
-
-

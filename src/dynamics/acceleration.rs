@@ -1,3 +1,4 @@
+#[derive(Debug, Clone, Copy, PartialEq)]
 pub struct Acceleration {
     ax: f64,
     ay: f64,
@@ -6,11 +7,7 @@ pub struct Acceleration {
 
 impl Acceleration {
     pub fn new(ax: f64, ay: f64, aangular: f64) -> Acceleration {
-        Acceleration {
-            ax,
-            ay,
-            aangular
-        }
+        Acceleration { ax, ay, aangular }
     }
 
     pub fn get_linear_acceleration(&self) -> (f64, f64) {
@@ -20,5 +17,4 @@ impl Acceleration {
     pub fn get_angular_acceleration(&self) -> f64 {
         self.aangular
     }
-
 }

@@ -1,16 +1,13 @@
+#[derive(Debug, Clone, Copy, PartialEq)]
 pub struct Velocity {
     vx: f64,
     vy: f64,
-    vangular: f64
+    vangular: f64,
 }
 
 impl Velocity {
     pub fn new(vx: f64, vy: f64, vangular: f64) -> Velocity {
-        Velocity {
-            vx,
-            vy,
-            vangular
-        }
+        Velocity { vx, vy, vangular }
     }
     pub fn get_velocity(&self) -> (f64, f64) {
         (self.vx, self.vy)
