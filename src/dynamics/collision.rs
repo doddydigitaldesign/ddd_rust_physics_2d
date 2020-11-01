@@ -1,10 +1,9 @@
 use crate::utils::intersection::circle_intersection;
-use crate::utils::intersection::Intersection;
 
 use crate::{
     dynamics::{acceleration::Acceleration, velocity::Velocity},
     shapes::circle::Circle,
-    utils::point::Point,
+    utils::intersection::Intersection,
 };
 
 #[derive(Debug, PartialEq)]
@@ -13,8 +12,8 @@ pub struct Collision<B> {
     body2: B,
 }
 
-impl<T> Collision<T> {
-    pub fn new(body1: T, body2: T) -> Collision<T> {
+impl<B> Collision<B> {
+    pub fn new(body1: B, body2: B) -> Collision<B> {
         Collision { body1, body2 }
     }
 }
@@ -35,8 +34,8 @@ impl Collision<Circle> {
 
 #[cfg(test)]
 mod tests {
-    use super::{Acceleration, Circle, Collision, Point, Velocity};
-    use crate::utils::intersection::IntersectionResult;
+    use super::{Acceleration, Circle, Collision, Velocity};
+    use crate::utils::{intersection::IntersectionResult, point::Point};
     #[test]
     fn it_finds_circle_poc() {
         let v1 = Velocity::new(5.0, 5.0, 0.0);

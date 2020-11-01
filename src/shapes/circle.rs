@@ -59,12 +59,12 @@ mod tests {
     #[test]
     fn it_circle() {
         use crate::shapes::circle::Circle;
-        let v1 = Velocity::new(5.0, 5.0, 0.0);
-        let v2 = Velocity::new(-5.0, 5.0, 0.0);
+        let velocity = Velocity::new(5.0, 5.0, 0.0);
 
-        let a1 = Acceleration::new(0.0, 0.0, 0.0);
-        let a2 = Acceleration::new(0.0, 0.0, 0.0);
-        let my_circle = Circle::new(10.0, 20.0, 5.9, None, v1, a1);
+        let acceleration = Acceleration::new(0.0, 0.0, 0.0);
+
+        let my_circle = Circle::new(10.0, 20.0, 5.9, None, velocity, acceleration);
+    
         let radius: f64 = 5.9;
 
         assert_eq!(my_circle.get_position(), (10.0, 20.0));
