@@ -19,6 +19,10 @@ impl Velocity {
     pub fn get_angular_velocity(&self) -> f64 {
         self.vangular
     }
+    pub fn get_kinetic_energy(&self) -> f64 {
+        let (velocity_x, velocity_y) = self.get_velocity();
+        0.5 * velocity_x.powi(2) + 0.5 * velocity_y.powi(2)
+    }
 }
 
 #[cfg(test)]
